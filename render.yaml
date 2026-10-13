@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: realtor-api
+    env: node
+    plan: free
+    rootDir: api
+    buildCommand: npm install
+    startCommand: node app.js
+    envVars:
+      - key: PORT
+        value: 8800
+      - key: CLIENT_URL
+        value: "TO_BE_REPLACED_WITH_VERCEL_URL"
+      - key: DATABASE_URL
+        sync: false
+      - key: JWT_SECRET_KEY
+        sync: false
+
+  - type: web
+    name: realtor-socket
+    env: node
+    plan: free
+    rootDir: socket
+    buildCommand: npm install
+    startCommand: node app.js
+    envVars:
+      - key: PORT
+        value: 4000
+      - key: CLIENT_URL
+        value: "TO_BE_REPLACED_WITH_VERCEL_URL"
