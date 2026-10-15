@@ -1,5 +1,0 @@
-start server
-console-ninja node --env-file .env --watch app.js
-
-Save DB update changes
-"npx prisma db push"
